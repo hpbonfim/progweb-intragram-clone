@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/hpbonfim/progweb-intragram-clone",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --watch . --ext js,html,css index.js"
+  },
+  "dependencies": {
+    "express": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
 }

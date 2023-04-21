@@ -9,6 +9,16 @@ app.get('/', (request, response) => {
   response.sendFile(__dirname + '/public/index.html');
 });
 
+// Rota para a página de login
+app.get('/login', (request, response) => {
+  response.sendFile(__dirname + '/public/views/login.html');
+});
+
+// Rediciona qualquer protocolo HTTP para a página de login caso o usuário tente acessar uma rota que não existe
+app.all('*', (request, response) => {
+  response.redirect('/login');
+});
+
 // Inicia o servidor na porta 3000
 app.listen(3000, () => {
   console.log('Servidor rodando: http://localhost:3000');

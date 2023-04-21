@@ -14,6 +14,11 @@ app.get('/login', (request, response) => {
   response.sendFile(__dirname + '/public/views/login.html');
 });
 
+// Rota para a página de perfil
+app.get('/perfil', (request, response) => {
+  response.sendFile(__dirname + '/public/views/perfil.html');
+});
+
 // Rediciona qualquer protocolo HTTP para a página de login caso o usuário tente acessar uma rota que não existe
 app.all('*', (request, response) => {
   response.redirect('/login');

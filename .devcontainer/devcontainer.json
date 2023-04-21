@@ -1,0 +1,4 @@
+{
+	"name": "NodeJS Codespaces",
+  "image": "mcr.microsoft.com/vscode/devcontainers/javascript-node"
+}

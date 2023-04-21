@@ -8,7 +8,8 @@
     "start": "nodemon --watch . --ext js,html,css index.js"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "body-parser": "latest"
   },
   "devDependencies": {
     "nodemon": "latest"

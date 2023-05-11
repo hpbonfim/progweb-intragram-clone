@@ -8,27 +8,56 @@ body {
   background-color: #fafafa;
 }
 
+main {
+  display: flex;
+}
+/* NAV BAR SECTION */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-container {
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-top: 35px;
+  padding-left: 25px;
+}
+
+nav img {
+  width: 110px;
+}
+
+.instagram-navbar {
+  width: 300px;
+}
+
+.list-navbar {
+  list-style-type: none;
+  padding-top: 30px;
+  padding-left: 10px;
+  margin: 5px;
+}
+
+.list-navbar li {
+  padding: 16px 16px;
+  margin-bottom: 3px;
+}
+
+.list-navbar li:hover {
+  border-radius: 15px;
+  background-color: #e7e7e7;
+}
+
+
+/* CONTAINER SECTION */
 .container {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-.logo-container {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header {
-  background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
-  padding: 12px 0;
-}
-
-header img {
-  width: 150px;
 }
 
 .profile-header {

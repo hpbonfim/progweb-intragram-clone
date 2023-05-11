@@ -8,8 +8,9 @@
     "start": "nodemon --watch . --ext js,html,css index.js"
   },
   "dependencies": {
+    "body-parser": "latest",
     "express": "latest",
-    "body-parser": "latest"
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "nodemon": "latest"

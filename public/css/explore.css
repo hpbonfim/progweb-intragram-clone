@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+  
+  main {
+    display: flex;
+  }
+
+/* NAV BAR SECTION */
+
+.logo-container {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-top: 35px;
+    padding-left: 25px;
+  }
+  
+  nav img {
+    width: 110px;
+  }
+  
+  .instagram-navbar {
+    width: 300px;
+  }
+  
+  .list-navbar {
+    list-style-type: none;
+    padding-top: 30px;
+    padding-left: 10px;
+    margin: 5px;
+  }
+  
+  .list-navbar li {
+    padding: 16px 16px;
+    margin-bottom: 3px;
+  }
+  
+  .list-navbar li:hover {
+    border-radius: 15px;
+    background-color: #e7e7e7;
+  }
+  

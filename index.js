@@ -6,15 +6,11 @@ const app = express();
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Rota inicial
+// Rota inicial para a página de login
 app.get('/', (request, response) => {
-  response.sendFile(__dirname + '/public/index.html');
-});
-
-// Rota para a página de login
-app.get('/login', (request, response) => {
   response.sendFile(__dirname + '/public/views/login.html');
 });
+
 
 // Rota para a ação de login
 app.post('/login', (request, response) => {
@@ -38,6 +34,15 @@ app.post('/login', (request, response) => {
 app.get('/perfil', (request, response) => {
   response.sendFile(__dirname + '/public/views/perfil.html');
 });
+
+// Rota para a página inicial
+app.get('/homepage', (request, response) => {
+  response.sendFile(__dirname + '/public/views/homepage.html');
+});
+
+app.get('/explore', (request, response) => {
+  response.sendFile(__dirname + '/public/views/explore.html');
+})
 
 // Rediciona qualquer protocolo HTTP para a página de login caso o usuário tente acessar uma rota que não existe
 app.all('*', (request, response) => {

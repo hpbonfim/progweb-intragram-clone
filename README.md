@@ -29,3 +29,7 @@ You should create a MVP (Minimum Viable Product) using a Full stack approach suc
 ### Page source
 
 -   [Instagram](https://www.instagram.com/)
+
+### Mockup Figma project
+
+[Figma](https://www.figma.com/file/VELFuX9RTtcbI2v8WbHDeE/clone-instagram?type=design&node-id=0-1&t=iI4ACnEZBewXBxCs-0)

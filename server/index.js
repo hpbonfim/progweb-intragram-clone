@@ -1,19 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
-
-// Configurações do Express para servir arquivos estáticos
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Rota inicial
 app.get('/', (request, response) => {
-  response.sendFile(__dirname + '/public/index.html');
-});
-
-// Rota para a página de login
-app.get('/login', (request, response) => {
-  response.sendFile(__dirname + '/public/views/login.html');
+  response.sendStatus(201);
 });
 
 // Rota para a ação de login
@@ -30,21 +20,21 @@ app.post('/login', (request, response) => {
     }
   } catch (error) {
     // Se algum erro ocorrer ou o nome de usuário/senha não forem válidos, redireciona para o login
-    response.redirect('/login');
+    response.sendStatus(401);
   }
 });
 
 // Rota para a página de perfil
 app.get('/perfil', (request, response) => {
-  response.sendFile(__dirname + '/public/views/perfil.html');
+  response.json({data: {name: 'teste', email: 'teste@teste.com', phone: '999999999', address: 'Rua teste, 123', city: 'Campo Grande', state: 'MS', country: 'Mato Grosso do Sul'}})
 });
 
 // Rediciona qualquer protocolo HTTP para a página de login caso o usuário tente acessar uma rota que não existe
 app.all('*', (request, response) => {
-  response.redirect('/login');
+  response.sendStatus(404);
 });
 
 // Inicia o servidor na porta 3000
-app.listen(3000, () => {
+app.listen(3333, () => {
   console.log('Servidor rodando: http://localhost:3000');
 });

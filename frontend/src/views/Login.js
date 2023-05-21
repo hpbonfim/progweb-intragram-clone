@@ -13,7 +13,7 @@ export function Login() {
           />
         </div>
         <br />
-        <form className="form" action="/login" method="POST">
+        <form className="form">
           <div className="form-group">
             <label className="form-label" htmlFor="username">
               Usuário
@@ -40,7 +40,7 @@ export function Login() {
             />
           </div>
 
-          <button className="btn-submit" type="submit">
+          <button className="btn-submit" onClick={() => window.location.replace('/perfil')}>
             Entrar
           </button>
         </form>

@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+  }
+
+html {
+    height: 100%;
+}
+  
+#root-div {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    height: 100%;
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SIDEBAR */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+}
+
+#logo-container {
+    margin: 30px 20px;
+    width: 30%;
+}
+
+#logo {
+    width: 100%;
+    display: inline-block;
+}
+
+#sidebar-list {
+    margin: 10px 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar-list li {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#sidebar-list li img {
+    width: 30px;
+}
+
+#img-list-profile {
+    border-radius: 50%;
+}
+
+/* SECTION SEPARATOR */
+
+#line-separator {
+    position: fixed;
+
+    left: 300px;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* FEED SECTION */
+
+#content-section {
+    display: flex;
+    flex: 4;
+    width: 100%;
+    height: 100%;
+}
+
+#feed-section {
+    width: 100%;
+}
+
+#feed {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    overflow: inherit;
+}
+
+#feed-post {
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    width: 400px;
+    margin: 15px;
+}
+
+#feed-post li {
+    flex: 1;
+}
+
+#feed-post li {
+    display: flex;
+}
+
+#post-header {
+    display: flex;
+    align-items: center;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    width: 10%;
+    margin: 10px;
+}
+
+#feed-image-container {
+    width: 100%;
+    height: 100%;
+}
+
+#feed-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ICONS */
+
+#post-interaction-icons {
+    display: flex;
+}
+
+/* FEED POST */
+
+/* DESCRIPTION */
+
+#description {
+    margin-left: 10px;
+}
+
+/* LIKE SECTION */
+
+#like-description {
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+#like-counter {
+    display: inline-block;
+}
+
+#like-label {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* COMMENT SECTION */
+
+#comment-description {
+    white-space: nowrap;
+}
+
+#comment-profile {
+    display: inline-block;
+}
+
+#comment-content {
+    display: inline-block;
+}

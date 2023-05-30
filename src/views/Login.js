@@ -40,7 +40,7 @@ export function Login() {
             />
           </div>
 
-          <button className="btn-submit" type='button' onClick={() => window.location.replace('/perfil')}>
+          <button className="btn-submit" type='button' onClick={() => window.location.replace('/home')}>
             Entrar
           </button>
         </form>

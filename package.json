@@ -4,6 +4,7 @@
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "latest"
   },

@@ -1,81 +1,74 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
+* {
+    box-sizing: border-box;
+  }
+
+html {
+    height: 100%;
+}
+  
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
     background-color: #fafafa;
+    height: 100%;
+    overflow: auto;
+  }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* SIDEBAR */
+
+#sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 300px;
+}
+
+#logo-container {
+    margin: 30px 20px;
+    width: 30%;
+}
+
+#logo {
+    width: 100%;
+    display: inline-block;
+}
+
+#sidebar-list {
+    margin: 10px 20px;
+    padding: 0;
+    list-style: none;
+}
+
+#sidebar-list li {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#sidebar-list li img {
+    width: 30px;
+    margin: 10px;
+}
+
+#img-list-profile {
+    border-radius: 50%;
+}
+
+/* SECTION SEPARATOR */
+
+#line-separator {
+    position: fixed;
+
+    left: 300px;
+    height: 100%;
+
     margin: 0;
     padding: 0;
 }
 
-header{
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    position: absolute;
-    left: 50%;
-    margin-top: 10px;
-}
-
-.logo img{
-    height: 30px;
-}
-
-.search imput{
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 0 10px;
-    width: 200px;
-}
- .perfil img{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    margin-right: 5px;
- }
-
-.reels-container{
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
-    grid-gap: 10px ;
-    padding: 20px;
-    margin: 0px 0px;
-    position: absolute;
-    left: 50%;   
-    margin-top: 30px; 
-}
-
-.page-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(2, 1fr));
-    
-    
-}
-
-.reel img{
-    width:50%;
-    height: 700px;
-    object-fit: cover;
-    border-radius: 5px;
-    align-items: center;
-}
-
-.reel {
-    border: 0px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    justify-content: center;
-
-}
-
-.navbar{
-    background-color: aqua;
-    width: 200px;
-    height: 700px;
-    object-fit: cover;
-    border-radius: 5px;
-    align-items: center;
-    position: absolute;
-    left: 41%;
-    margin-top: 58px;
-}

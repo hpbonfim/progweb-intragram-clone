@@ -74,31 +74,31 @@ export function Perfil() {
         <div className="container">
           <ul>
             <li>
-              <a href="#">Sobre</a>
+              <a href="/404">Sobre</a>
             </li>
             <li>
-              <a href="#">Ajuda</a>
+              <a href="/404">Ajuda</a>
             </li>
             <li>
-              <a href="#">Imprensa</a>
+              <a href="/404">Imprensa</a>
             </li>
             <li>
-              <a href="#">API</a>
+              <a href="/404">API</a>
             </li>
             <li>
-              <a href="#">Carreiras</a>
+              <a href="/404">Carreiras</a>
             </li>
             <li>
-              <a href="#">Privacidade</a>
+              <a href="/404">Privacidade</a>
             </li>
             <li>
-              <a href="#">Termos</a>
+              <a href="/404">Termos</a>
             </li>
             <li>
-              <a href="#">Diretório</a>
+              <a href="/404">Diretório</a>
             </li>
             <li>
-              <a href="#">Língua</a>
+              <a href="/404">Língua</a>
             </li>
           </ul>
           <div className="legal">© 2022 Instagram do Facebook</div>

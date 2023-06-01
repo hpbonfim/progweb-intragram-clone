@@ -1,0 +1,38 @@
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: #fafafa;
+  color: #262626;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.notfound-error-code {
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.notfound-error-message {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.notfound-error-detail {
+  font-size: 16px;
+}
+
+.notfound-error-detail a {
+  color: #003569;
+  text-decoration: none;
+}
+
+.notfound-error-detail a:hover {
+  text-decoration: underline;
+}

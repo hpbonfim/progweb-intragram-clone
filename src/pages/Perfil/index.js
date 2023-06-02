@@ -1,19 +1,44 @@
 import React from 'react'
 import './perfil.css'
+import {useNavigate} from 'react-router-dom';
+import {HiHome} from 'react-icons/hi';
+import {MdExplore} from 'react-icons/md';
+import {BsFilePlay} from 'react-icons/bs';
+import {BiMessageSquareDetail} from 'react-icons/bi';
 
+
+const icon_styling = {margin: "10px",}
 export function Perfil() {
+
+  const navigate = useNavigate();
+    const handleClickHome = () => {
+        navigate('/home', {replace: true})
+    }
+    const handleClickExplore = () => {
+        navigate('/explore', {replace: true})
+    }
+    const handleClickProfile = () => {
+        navigate('/perfil', {replace: true})
+    }
   return (
     <div>
-      <header>
-        <div className="container">
-          <div className="logo-container">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1280px-Instagram_logo.svg.png"
-              alt="Logo do Instagram"
-            />
-          </div>
+      <nav id="sidebar">
+        <div id="logo-container">
+          <img id="logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1280px-Instagram_logo.svg.png"
+            alt="Instagram" />
         </div>
-      </header>
+        <ul id="sidebar-list">
+          <li id="homePage" onClick={handleClickHome}><HiHome size="28" style={icon_styling} /><strong> Página Inicial</strong></li>
+          <li id="explorePage" onClick={handleClickExplore}><MdExplore size="28" style={icon_styling} /> Explorar</li>
+          <li><BsFilePlay size="28" style={icon_styling} /> Reels</li>
+          <li><BiMessageSquareDetail size="28" style={icon_styling} /> Mensagens</li>
+          <li id="profilePage" onClick={handleClickProfile}><img id="img-list-profile" src="https://picsum.photos/2000" style={icon_styling} /> Perfil</li>
+        </ul>
+      </nav>
+
+      <hr id="line-separator" />
+
       <main>
         <div className="container">
           <div className="profile-header">

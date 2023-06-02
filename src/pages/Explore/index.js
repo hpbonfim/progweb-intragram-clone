@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/explore.css';
+import './explore.css';
 import { useState } from 'react';
 import {HiHome} from 'react-icons/hi';
 import {MdExplore} from 'react-icons/md';
@@ -32,7 +32,7 @@ export function Explore() {
                     <li onClick={handleClickExplore} id="explorePage"><MdExplore size="28" style={icon_styling} /> Explorar</li>
                     <li id="reelsPage"><BsFilePlay size="28" style={icon_styling} /> Reels</li>
                     <li id="dmPage"><BiMessageSquareDetail size="28" style={icon_styling} /> Mensagens</li>
-                    <li id="profilePage" onClick={handleClickProfile}><img id="img-list-profile" src="https://picsum.photos/2008" style={icon_styling}/> Perfil</li>
+                    <li id="profilePage" onClick={handleClickProfile}><img id="img-list-profile" src="https://picsum.photos/2000" style={icon_styling}/> Perfil</li>
                 </ul>
             </nav>
 

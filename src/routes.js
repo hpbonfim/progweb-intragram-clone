@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes as Switch, Route, Navigate } from 'react-router-dom'
-import { Login } from './views/Login.js'
-import { Perfil } from './views/Perfil.js'
-import { Home } from './views/Home.js'
-import { Explore } from './views/Explore.js'
+import { Login } from './pages/Login'
+import { Perfil } from './pages/Perfil'
 
 export const Routes = () => (
   <Router>

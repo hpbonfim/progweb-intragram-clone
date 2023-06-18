@@ -2,16 +2,20 @@ import { BrowserRouter as Router, Routes as Switch, Route, Navigate } from 'reac
 import { Login } from './pages/Login'
 import { Perfil } from './pages/Perfil'
 import { Home } from './pages/Home'
+import { Messages } from './pages/Messages'
 import { Explore } from './pages/Explore'
+import Modal from './pages/Modal_Content_Messages/index'
 
 export const Routes = () => (
   <Router>
     <Switch>
       <Route path="/login" element={<Login />} />
       <Route path="/perfil" element={<Perfil />} />
-      <Route path="/home" element={<Home/>} />
-      <Route path="/explore" element={<Explore/>} />
-      <Route path="/404" element={<h1>404</h1>} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/explore" element={<Explore />} />
+      <Route path="/messages" element={<Messages />} />
+      <Route path="/modal" element={<Modal />} />
+      <Route path="/404" element={<h1>404</h1>}/>
       <Route path="*" element={<Navigate to="/login" />} />
     </Switch>
   </Router>

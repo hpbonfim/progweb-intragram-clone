@@ -7,6 +7,7 @@ import {BsFilePlay} from 'react-icons/bs';
 import {BiMessageSquareDetail, BiComment} from 'react-icons/bi';
 import {AiOutlineHeart, AiFillHeart} from 'react-icons/ai';
 import {useNavigate} from 'react-router-dom';
+import Comentarios from '../Comments/index';
 
 
 
@@ -53,38 +54,9 @@ export function Home() {
                                 <div id="post-interaction-icons">
                                     {!likeBtn ? <AiOutlineHeart size="18" style={icon_styling}/> : <AiFillHeart/>} <BiComment size="18" style={icon_styling}/>
                                 </div>
-                                <div id="description">
-                                    <div id="like-description">
-                                        <p id="like-counter">0</p>
-                                        <p id="like-label">curtidas</p>
-                                    </div>
 
-                                    <div id="comment-description">
-                                        <p id="comment-profile">antonio.carlos</p>: <p id="comment-content"> Gostei!</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li id="feed-post">
-                                <p id="post-header">
-                                    <img id="profile-pic" src="https://picsum.photos/2003" /> angela.carla
-                                </p>
-                                <div id="feed-image-container">
-                                    <img src="https://picsum.photos/2004" />
-                                </div>
-                                <div id="post-interaction-icons">
-                                    {!likeBtn ? <AiOutlineHeart size="18" style={icon_styling}/> : <AiFillHeart/>} <BiComment size="18" style={icon_styling}/>
-                                </div>
+                                <Comentarios />
 
-                                <div id="description">
-                                    <div id="like-description">
-                                        <p id="like-counter">0</p>
-                                        <p id="like-label">curtidas</p>
-                                    </div>
-
-                                    <div id="comment-description">
-                                        <p id="comment-profile">adalberto_campos</p>: <p id="comment-content"> Olosco! Me leva tambem!</p>
-                                    </div>
-                                </div>
                             </li>
                         </ul>
                     </section>

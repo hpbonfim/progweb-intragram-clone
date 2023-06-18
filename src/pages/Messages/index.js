@@ -18,9 +18,10 @@ import {
     RiImageLine,
     RiHeartLine
 } from 'react-icons/ri';
-import './App.css';
 
-function App() {
+import "./messages.css"
+
+export function Messages() {
     const [isNewMessageOpen, setIsNewMessageOpen] = useState(false);
     const [isChatActive, setIsChatActive] = useState(false);
 
@@ -218,6 +219,4 @@ function App() {
             </main>
         </section>
     );
-}
-
-export default App;
+};

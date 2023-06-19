@@ -1,223 +1,167 @@
-import { useState } from 'react';
-import {
-    BiX,
-    BiHomeAlt,
-    BiSearch,
-    BiMoviePlay,
-    BiChevronDown,
-    BiEdit,
-    BiPhone,
-    BiVideo,
-    BiMicrophone
-} from 'react-icons/bi';
-import {
-    RiMessengerLine,
-    RiInstagramLine,
-    RiInformationLine,
-    RiEmotionHappyLine,
-    RiImageLine,
-    RiHeartLine
-} from 'react-icons/ri';
-import './App.css';
+import { RiMessengerLine, RiEmotionHappyLine } from 'react-icons/ri';
+import { Sidebar } from '../../components/sidebar/index.js';
+import { useState, useEffect } from 'react';
+import { userMessages } from './mock/index';
+import './messages.css';
 
-function App() {
-    const [isNewMessageOpen, setIsNewMessageOpen] = useState(false);
-    const [isChatActive, setIsChatActive] = useState(false);
+export function Messages() {
+    const [activeChat, setActiveChat] = useState();
+    const [newMessage, setNewMessage] = useState('');
+    const [messagesInfo, setMessagesInfo] = useState([]);
 
-    const handleClick = type => {
-        if (type === 'newMessage') setIsNewMessageOpen(current => !current);
-        if (type === 'chat') setIsChatActive(current => !current);
+    const handleUserClick = user => setActiveChat(user);
+
+    const handleSendMessageClick = () => {
+        if (!activeChat || !newMessage) return;
+
+        activeChat.messages.push({
+            isUser: false,
+            message: newMessage
+        });
+
+        setNewMessage('');
+
+        localStorage.setItem('@messagesInfo', JSON.stringify(messagesInfo));
     };
+
+    const handleSidebarMessagesClick = () => setActiveChat();
+
+    useEffect(() => {
+        const loadedMessages = localStorage.getItem('@messagesInfo');
+
+        if (loadedMessages) {
+            setMessagesInfo(JSON.parse(loadedMessages));
+            return;
+        }
+
+        setMessagesInfo(userMessages);
+
+        localStorage.setItem('@messagesInfo', JSON.stringify(userMessages));
+    }, []);
 
     return (
         <section className="body-section">
-            <section
-                className="new-message-screen"
-                style={{ display: isNewMessageOpen ? 'flex' : 'none' }}
-            >
-                <section className="new-message-window">
-                    <section className="new-message-close">
-                        <section className="aux" />
-
-                        <section className="new-message-title">
-                            <h1>New message</h1>
-                        </section>
-
-                        <section className="new-message-x-close">
-                            <BiX onClick={() => handleClick('newMessage')} />
-                        </section>
-                    </section>
-
-                    <section className="new-message-search-input">
-                        <h4>For:</h4>
-
-                        <input
-                            type="text"
-                            name=""
-                            id=""
-                            placeholder="Search..."
-                        />
-                    </section>
-
-                    <section className="new-message-results">
-                        <ul>
-                            <li>No accounts found.</li>
-                        </ul>
-
-                        <section className="new-message-chat-button">
-                            Chat
-                        </section>
-                    </section>
-                </section>
-            </section>
-
-            <aside id="sidebar">
-                <nav>
-                    <section id="instagram-logo" className="icon">
-                        <RiInstagramLine />
-                    </section>
-
-                    <ul id="sidebar-list">
-                        <li className="icon">
-                            <BiHomeAlt />
-                        </li>
-
-                        <li className="icon">
-                            <BiSearch />
-                        </li>
-
-                        <li className="icon">
-                            <BiMoviePlay />
-                        </li>
-
-                        <li className="icon">
-                            <RiMessengerLine
-                                onClick={() => handleClick('chat')}
-                            />
-                        </li>
-
-                        <li>
-                            <img
-                                className="icon profile-picture"
-                                src="https://picsum.photos/seed/1/200"
-                                alt="Profile"
-                            />
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
+            <Sidebar
+                isMessagePage={true}
+                openChat={handleSidebarMessagesClick}
+                isShrink={true}
+            />
 
             <main id="content-section">
                 <aside>
                     <section className="head">
-                        <section>
-                            <h1>user_name</h1>
-                            <BiChevronDown fontSize={'1.5rem'} />
-                        </section>
-
-                        <BiEdit
-                            className="icon"
-                            onClick={() => handleClick('newMessage')}
-                        />
+                        <h1>fulano_de_tal</h1>
                     </section>
 
                     <section className="title-request">
                         <h1>Messages</h1>
-                        <h5>Requests</h5>
                     </section>
 
                     <nav className="messages">
                         <ul>
-                            <li
-                                className="message-chat"
-                                onClick={() => handleClick('chat')}
-                            >
-                                <img
-                                    className="profile-picture message-picture"
-                                    src="https://picsum.photos/seed/4/200"
-                                    alt="Profile picture"
-                                />
+                            {messagesInfo.map(userMessage => (
+                                <li
+                                    className="message-chat"
+                                    onClick={() => handleUserClick(userMessage)}
+                                    key={`user-${userMessage.id}`}
+                                >
+                                    <img
+                                        className="profile-picture message-picture"
+                                        src={`https://picsum.photos/seed/${userMessage.id}/200`}
+                                        alt="Profile picture"
+                                    />
 
-                                <section className="name-status">
-                                    <h4>Name</h4>
-                                    <p>statuasdfasdfsdfs</p>
-                                </section>
-                            </li>
+                                    <section className="name-status">
+                                        <h4>{userMessage.name}</h4>
+                                        <p>
+                                            {
+                                                userMessage.messages.at(-1)
+                                                    .message
+                                            }
+                                        </p>
+                                    </section>
+                                </li>
+                            ))}
                         </ul>
                     </nav>
                 </aside>
 
                 <section className="new-chat-messages">
-                    <section
-                        className="new-chat"
-                        style={{ display: isChatActive ? 'none' : 'flex' }}
-                    >
-                        <section className="messenger-border">
-                            <RiMessengerLine className="messenger-chat-icon" />
-                        </section>
-                        <h3>Your messages</h3>
-                        <p>
-                            Send photos and private messages to a friend or
-                            group
-                        </p>
-                        <section
-                            className="send-message-button"
-                            onClick={() => handleClick('newMessage')}
-                        >
-                            Send message
-                        </section>
-                    </section>
-
-                    <section
-                        className="chat"
-                        style={{ display: isChatActive ? 'flex' : 'none' }}
-                    >
-                        <section className="chat-head">
-                            <section className="chat-profile">
-                                <img
-                                    className="profile-picture message-picture"
-                                    src="https://picsum.photos/seed/4/200"
-                                    alt="Profile picture"
-                                />
-
-                                <section className="name-status">
-                                    <h4>Name</h4>
-                                    <p>statuasdfasdfsdfs</p>
-                                </section>
+                    {!activeChat && (
+                        <section className="new-chat">
+                            <section className="messenger-border">
+                                <RiMessengerLine className="messenger-chat-icon" />
                             </section>
 
-                            <section className="chat-tools">
-                                <BiPhone className="icon tool-icon" />
-                                <BiVideo className="icon tool-icon" />
-                                <RiInformationLine className="icon tool-icon" />
-                            </section>
+                            <h3>Your messages</h3>
+                            <p>Send private messages to a friend</p>
                         </section>
+                    )}
 
-                        <section className="main-chat"></section>
-
-                        <section className="chat-foot">
-                            <section className="chat-message-box">
-                                <section className="message-input">
-                                    <RiEmotionHappyLine className="icon" />
-
-                                    <input
-                                        type="text"
-                                        placeholder="Message..."
+                    {activeChat && (
+                        <section className="chat">
+                            <section className="chat-head">
+                                <section className="chat-profile">
+                                    <img
+                                        className="profile-picture message-picture"
+                                        src={`https://picsum.photos/seed/${activeChat.id}/200`}
+                                        alt="Profile picture"
                                     />
-                                </section>
 
-                                <section className="message-tools">
-                                    <BiMicrophone className="icon tool-icon" />
-                                    <RiImageLine className="icon tool-icon" />
-                                    <RiHeartLine className="icon tool-icon" />
+                                    <section className="name-status">
+                                        <h4>{activeChat.name}</h4>
+                                        <p>
+                                            Online {activeChat.lastOnline} ago
+                                        </p>
+                                    </section>
+                                </section>
+                            </section>
+
+                            <section className="main-chat-father">
+                                <section className="main-chat">
+                                    {activeChat.messages.map(
+                                        ({ isUser, message }, i) => (
+                                            <section
+                                                key={`user-message-${activeChat.id}-${i}`}
+                                                className={`chat-message ${
+                                                    isUser ? 'friend' : 'you'
+                                                }`}
+                                            >
+                                                {message}
+                                            </section>
+                                        )
+                                    )}
+                                </section>
+                            </section>
+
+                            <section className="chat-foot">
+                                <section className="chat-message-box">
+                                    <input
+                                        className="message-input"
+                                        type="text"
+                                        value={newMessage}
+                                        placeholder="Message..."
+                                        onChange={event =>
+                                            setNewMessage(event.target.value)
+                                        }
+                                        onKeyDown={event =>
+                                            event.key === 'Enter' &&
+                                            handleSendMessageClick()
+                                        }
+                                    />
+
+                                    <button
+                                        className="send-button"
+                                        onClick={handleSendMessageClick}
+                                    >
+                                        Send
+                                    </button>
                                 </section>
                             </section>
                         </section>
-                    </section>
+                    )}
                 </section>
             </main>
         </section>
     );
 }
-
-export default App;

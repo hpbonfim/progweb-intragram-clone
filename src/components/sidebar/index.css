@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#sidebar nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar nav {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    height: 100vh;
+    width: 5rem;
+    padding: 2rem 0;
+
+    border-right: 1px solid #bfbfbf;
+}
+
+#instagram-logo {
+    margin-bottom: 2rem;
+}
+
+#sidebar-list li {
+    margin: 1rem;
+}
+
+.icon {
+    font-size: 2rem;
+    width: 2rem;
+}
+
+.icon,
+.head section,
+.title-request h5,
+.message-chat {
+    cursor: pointer;
+}
+
+.profile-picture {
+    border-radius: 50%;
+}

@@ -20,6 +20,10 @@ export function Perfil() {
     const handleClickProfile = () => {
         navigate('/perfil', {replace: true})
     }
+    const handleClickMessages = () => {
+        navigate('/messages', {replace: true})
+    }
+
   return (
     <div>
       <nav id="sidebar">
@@ -32,7 +36,7 @@ export function Perfil() {
           <li id="homePage" onClick={handleClickHome}><HiHome size="28" style={icon_styling} /><strong> Página Inicial</strong></li>
           <li id="explorePage" onClick={handleClickExplore}><MdExplore size="28" style={icon_styling} /> Explorar</li>
           <li><BsFilePlay size="28" style={icon_styling} /> Reels</li>
-          <li><BiMessageSquareDetail size="28" style={icon_styling} /> Mensagens</li>
+          <li onClick={handleClickMessages}><BiMessageSquareDetail size="28" style={icon_styling} /> Mensagens</li>
           <li id="profilePage" onClick={handleClickProfile}><img id="img-list-profile" src="https://picsum.photos/2000" style={icon_styling} /> Perfil</li>
         </ul>
       </nav>

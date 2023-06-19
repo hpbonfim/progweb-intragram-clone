@@ -7,10 +7,13 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    /* overflow-x: hidden !important; */
 }
 
 .body-section {
     display: flex;
+    width: 100vw;
+    justify-content: space-between;
     font-family: Arial, sans-serif;
     background-color: #fafafa;
     overflow: hidden !important;
@@ -21,54 +24,24 @@ a {
     color: inherit;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 input {
     margin-left: 1rem;
     border: none;
     outline: none;
 }
 
-#sidebar nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 4rem;
-    padding: 2rem 0;
-    height: 100vh;
-}
-
-#instagram-logo {
-    margin-bottom: 2rem;
-}
-
-#sidebar-list li {
-    margin: 1rem;
-}
-
-.icon {
-    font-size: 2rem;
-    width: 2rem;
-}
-
-.icon,
-.head section,
-.title-request h5,
-.message-chat {
-    cursor: pointer;
-}
-
-.profile-picture {
-    border-radius: 50%;
-}
-
 .message-picture {
     width: 3rem;
     margin-right: 1rem;
+}
+
+main {
+    z-index: 1;
+}
+
+main aside {
+    padding: 2rem 1rem;
+    border-right: 1px solid var(--line-stroke);
 }
 
 main,
@@ -78,10 +51,12 @@ main,
     display: flex;
 }
 
-main aside {
-    padding: 2rem 1.5rem;
+#content-section {
+    margin-left: 5rem;
+    display: flex;
+    /* padding: 0 1.5rem; */
     width: 25rem;
-    border-inline: 1px solid var(--line-stroke);
+    /* border-inline: 1px solid var(--line-stroke); */
 }
 
 .message-chat {
@@ -107,9 +82,8 @@ main aside {
     color: var(--secondary-text);
 }
 
-.head section h1 {
+.head h1 {
     font-size: 1.25rem;
-    margin-right: 0.5rem;
 }
 
 .new-chat {
@@ -148,99 +122,35 @@ main aside {
     background-color: var(--button);
 }
 
-.new-message-screen {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background-color: #000000d9;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.new-message-close,
-.new-message-results,
-.new-message-search-input {
-    padding: 1rem;
-}
-
-.new-message-close {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    height: 4.5rem;
-}
-
-.aux {
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.new-message-title {
-    font-size: 2rem;
-}
-
-.new-message-x-close {
-    cursor: pointer;
-    font-size: 2rem;
-}
-
-.new-message-window {
-    height: 35rem;
-    width: 40rem;
-    border-radius: 1rem;
-    background-color: #ffffff;
-}
-
-.new-message-search-input {
-    border: 1px solid var(--line-stroke);
-    border-bottom: 1px solid var(--line-stroke);
-    display: flex;
-    font-size: 1.25rem;
-    height: 3.75rem;
-}
-
-.new-message-search-input input {
-    width: 25rem;
-    font-size: 1.25rem;
-}
-
-.new-message-search-input input:active {
-    border: none;
-}
-
-.new-message-results {
-    height: 26.75rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.new-message-results ul {
-    color: var(--secondary-text);
-}
-
-.new-message-chat-button {
-    padding: 1rem;
-    font-weight: bold;
-    background-color: #0095f6;
-    opacity: 25%;
-    text-align: center;
-    color: #ffffff;
-    border-radius: 0.5rem;
-    margin-top: 1rem;
-}
-
 .new-chat-messages {
     width: 90.5rem;
     /* display: flex; */
 }
 
 .chat {
-    display: none;
+    display: flex;
     flex-direction: column;
+    width: 95.5rem;
+}
+
+.chat-message {
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+    max-width: 80ch;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.chat-message.you {
+    color: #ffffff;
+    background-color: #0095f6;
+    align-self: flex-end;
+}
+
+.chat-message.friend {
+    background-color: #efefef;
+    align-self: flex-start;
 }
 
 .chat-head,
@@ -262,22 +172,42 @@ main aside {
     justify-content: space-between;
 }
 
-.main-chat {
+.main-chat-father {
     height: 56.375rem;
     border-top: 1px solid var(--line-stroke);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.main-chat {
+    height: fit-content;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-foot {
+    width: 89rem;
     margin: 1rem 1rem;
     border-radius: 2rem;
     border: 1px solid var(--line-stroke);
 }
 
-.message-input input {
+.message-input {
     font-size: 1.5rem;
-    width: 74rem;
+    width: 80rem;
 }
 
-.tool-icon {
-    margin-left: 0.5rem;
+.send-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+    color:#0095f6;
+}
+
+.send-button:hover {
+    color:#003d66;
 }
